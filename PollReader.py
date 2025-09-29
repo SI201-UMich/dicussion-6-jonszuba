@@ -81,11 +81,11 @@ class PollReader():
         harris_max = max(self.data_dict['Harris result'])
         trump_max = max(self.data_dict['Trump result'])
         if harris_max > trump_max:
-            return f"Harris: {harris_max:.1f}%"
+            return f"Harris: {harris_max * 100}%"
         elif trump_max > harris_max:
-            return f"Trump: {trump_max:.1f}%"
+            return f"Trump: {trump_max * 100}%"
         else:
-            return f"EVEN: {harris_max:.1f}%"
+            return f"EVEN: {harris_max * 100}%"
         
         pass
 
@@ -99,8 +99,9 @@ class PollReader():
                    among likely voters, in that order.
         """
         pass
-        trump_pp = 
-        harris_pp = 
+        trump_pp = sum(self.data_dict['Trump result']) / len(self.data_dict['Trump result'])
+        harris_pp = sum(self.data_dict['Harris result']) / len(self.data_dict['Harris result'])
+        return (harris_pp, trump_pp)
 
     def polling_history_change(self):
         """
