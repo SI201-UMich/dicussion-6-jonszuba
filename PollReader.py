@@ -99,8 +99,8 @@ class PollReader():
                    among likely voters, in that order.
         """
         pass
-        trump_pp = sum(self.data_dict['Trump result']) / len(self.data_dict['Trump result'])
-        harris_pp = sum(self.data_dict['Harris result']) / len(self.data_dict['Harris result'])
+        trump_pp = sum(self.data_dict["Trump result"]) / len(self.data_dict["Trump result"])
+        harris_pp = sum(self.data_dict["Harris result"]) / len(self.data_dict["Harris result"])
         return (harris_pp, trump_pp)
 
     def polling_history_change(self):
